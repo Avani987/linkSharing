@@ -4,135 +4,11 @@
 <head>
 <title>Bootstrap form</title>
   <%--<spring:url value="/resources/static/css/wf.css" var="homeCss" />
-  <link rel="stylesheet" href="${homeCss}">--%>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <%--<link rel="stylesheet" href="${homeCss}">--%>
-    <style>
-        .container-fluid{
-            border:2px solid;
-            border-radius:10px;
-            padding:3px;
-        }
-
-        .header h2{
-            display:inline-block;
-            margin-top:10px;
-        }
-
-        .header form{
-            float:right;
-        }
-
-        .header input{
-            border:none;
-        }
-
-        .header .form-group{
-            display:inline-flex;
-            border:2px solid;
-            border-radius:35px;
-            margin-top:5px;
-            height:30px;
-        }
-
-        .header span#search{
-            margin-left:15px;
-            margin-top: 5px;
-        }
-
-        .header span#cross{
-            margin-right:15px;
-            margin-top:5px;
-        }
-
-        .recent,.top,.form1,.form2{
-            border:2px solid;
-            margin-top : 26px;
-            margin-right : 20px;
-            margin-bottom:5px;
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
-        }
-
-        .heading{
-            border-bottom : 2px solid;
-            background-color :#C8CFCD;
-            padding-left:7px;
-            padding-right:7px;
-            margin-top:0px;
-            padding-top:0.5px;
-            margin-bottom:15px;
-        }
-
-        .uplace{
-            margin-bottom:20px;
-            margin-left:10px;
-        }
-
-        .btn-group {
-            height:30px;
-            border:2px solid;
-            border-radius:5px;
-            margin-top:-35px;
-        }
-
-        .btn-group .btn-default{
-            height:26px;
-            border-right:3px solid;
-            padding-right:30px;
-            padding-top:2px;
-        }
-
-        .dropdown-toggle{
-            height:26px;
-            padding-top:2px;
-        }
-
-        form{padding:10px 25px 10px 10px;}
-
-        .form-group .btn{
-            border:2px solid;
-            border-radius:5px;
-            background-color:#C8CFCD;
-        }
-
-        .form-group .link, .sub{
-            margin-left:50px;
-            float:right;
-        }
-
-        .form-control{
-            border:2px solid;
-            border-radius:0px;
-            height:25px;
-            margin-bottom:10px;
-        }
-
-        .reg{margin-left:15px;}
-
-        .sub, .reg{
-            padding:1px 20px 1px 20px;
-        }
-
-        #photo{
-            padding-top:0px;
-            padding-bottom:0px;
-            padding-left:0px;
-        }
-
-        .browse{
-            margin-left:-25px;
-            padding-top:1px;
-            padding-bottom:1px;
-        }
-
-        #brand{
-            padding-left:10px;
-        }
-    </style>
+  <spring:url value="/resources/static/css/bootstrap.min.css" var="bootstrapCss" />--%>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="${pageContext.request.contextPath}/resources/static/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="${pageContext.request.contextPath}/resources/static/css/wf.css" rel="stylesheet" />
 </head>
 <body>
 <div class="container-fluid">
@@ -140,9 +16,9 @@
       <h2><a class="underlined"><u>Link Sharing</u></a></h2>
         <form class="form-inline" action="#" method="post">
           <div class="form-group">
-            <label class="control-label" for="search"> <a href="#"> <span id="search" class="glyphicon glyphicon-search"></span></a></label>
+            <label class="control-label" for="search"> <a href="#"><i id="search" class="fa fa-search" aria-hidden="true"></i></a></label>
             <input type="text" class="form-control" name="" value="Search">
-            <a href="#"><span id="cross" class="glyphicon glyphicon-remove-sign"></span></a>
+            <a href="#"><i id="cross" class="fa fa-times" style="margin-left:-40px"></i></a>
           </div>
         </form>
       </div>
@@ -158,7 +34,7 @@
 
 <div class="row user1 uplace">
 <div class="col-md-2">
-<img src="user.png" alt="Profile icon" height="89" width="79">
+<img src="${pageContext.request.contextPath}/resources/static/image/user.png" alt="Profile icon" height="89" width="79">
 </div>
 <div class="col-md-8" style="width:76%">
 <div class="top-line">
@@ -171,9 +47,9 @@
 </div>
 <div class="bottom-line">
 <span style="margin-left:-20px;">
-<img src="facebook.png" alt="share" height="26" width="26">
-<img src="twitter.png" alt="share" height="25" width="25">
-<img src="google.png" alt="share" height="22" width="22">
+  <i class="fa fa-facebook-square"></i>
+  <i class="fa fa-tumblr"></i>
+  <i class="fa fa-google-plus"></i>
 <span style="float:right;"><u><a href=#>View post</a></u></span>
 </span>
 </div>
@@ -182,7 +58,7 @@
 
 <div class="row user2 uplace">
 <div class="col-md-2">
-<img src="user.png" alt="Profile icon" height="89" width="79">
+<img src="${pageContext.request.contextPath}/resources/static/image/user.png" alt="Profile icon" height="89" width="79">
 </div>
 <div class="col-md-8" style="width:76%">
 <div class="top-line">
@@ -195,9 +71,9 @@
 </div>
 <div class="bottom-line">
 <span style="margin-left:-20px;">
-<img src="facebook.png" alt="share" height="26" width="26">
-<img src="twitter.png" alt="share" height="25" width="25">
-<img src="google.png" alt="share" height="22" width="22">
+ <i class="fa fa-facebook-square"></i>
+  <i class="fa fa-tumblr"></i>
+  <i class="fa fa-google-plus"></i>
 <span style="float:right;"><u><a href=#>View post</a></u></span>
 </span>
 </div>
@@ -228,7 +104,7 @@
    
 <div class="row user1 uplace">
 <div class="col-md-2">
-<img src="user.png" alt="Profile icon" height="89" width="79">
+<img src="${pageContext.request.contextPath}/resources/static/image/user.png" alt="Profile icon" height="89" width="79">
 </div>
 <div class="col-md-8" style="width:76%">
 <div class="top-line">
@@ -241,9 +117,9 @@
 </div>
 <div class="bottom-line">
 <span style="margin-left:-20px;">
-<img src="facebook.png" alt="share" height="26" width="26">
-<img src="twitter.png" alt="share" height="25" width="25">
-<img src="google.png" alt="share" height="22" width="22">
+ <i class="fa fa-facebook-square"></i>
+  <i class="fa fa-tumblr"></i>
+  <i class="fa fa-google-plus"></i>
 <span style="float:right;"><u><a href=#>View post</a></u></span>
 </span>
 </div>
@@ -336,5 +212,8 @@
 </div><!-- col-md-5 -->
 
 </div><!-- container -->
+
+<script src="${pageContext.request.contextPath}/resources/static/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 </body>
 </html>

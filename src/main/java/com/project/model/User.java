@@ -1,13 +1,15 @@
 package com.project.model;
 
+import org.springframework.orm.hibernate3.support.BlobByteArrayType;
+
 import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import javax.persistence.*;
 
 @Entity
-@Table(name="USER_TABLE")
+@Table(name="User")
 public class User implements Serializable {
 
     @Id @GeneratedValue
@@ -17,6 +19,33 @@ public class User implements Serializable {
     private String uname;
     private String email;
     private String password;
+    Boolean admin;
+    Boolean active;
+    @Temporal(TemporalType.DATE)
+    Date dateCreated;
+    //byte[] photo;
+
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
+    //DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+
+    public User(String fname, String lname, String uname, String email, String password) {
+        this.fname = fname;
+        this.lname = lname;
+        this.uname = uname;
+        this.email = email;
+        this.password = password;
+        this.admin = false;
+        this.active = false;
+        this.dateCreated = /*dateFormat.format(date)*/new Date() ;
+    }
+
 
     public Long getId() {
         return id;

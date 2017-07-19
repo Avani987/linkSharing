@@ -10,7 +10,9 @@ public class LoginService {
     public boolean validateUser(String username, String password){
         user=userdao.validateUser(username,password);
         if(user!=null){
+
             return true;
+
         }
         return false;
     }

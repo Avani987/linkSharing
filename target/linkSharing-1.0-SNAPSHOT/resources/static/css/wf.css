@@ -1,0 +1,125 @@
+.container-fluid{
+    border:2px solid;
+    border-radius:10px;
+	padding:3px;
+  }
+  
+.header h2{
+    display:inline-block;
+	margin-top:10px;
+}
+
+.header form{
+    float:right;
+}
+
+.header input{
+    border:none;
+}
+  
+.header .form-group{
+    display:inline-flex;
+    border:2px solid;
+    border-radius:35px;
+    margin-top:5px;
+	height:30px;
+}
+
+.header span#search{
+    margin-left:15px;
+    margin-top: 5px;
+}
+
+.header span#cross{
+    margin-right:15px;
+    margin-top:5px;
+}
+  
+.recent,.top,.form1,.form2{
+	border:2px solid;
+	margin-top : 26px;
+	margin-right : 20px;
+	margin-bottom:5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.heading{
+	border-bottom : 2px solid;
+	background-color :#C8CFCD;
+	padding-left:7px;
+	padding-right:7px;
+	margin-top:0px;
+	padding-top:0.5px;
+	margin-bottom:15px;
+}
+
+.uplace{
+	margin-bottom:20px;
+	margin-left:10px;
+}
+
+.btn-group {
+	height:30px;
+	border:2px solid;
+	border-radius:5px;
+	margin-top:-35px;
+}
+
+.btn-group .btn-default{
+	height:26px;
+	border-right:3px solid;
+	padding-right:30px;
+	padding-top:2px;
+}
+
+.dropdown-toggle{
+	height:26px;
+	padding-top:2px;
+}
+
+form{padding:10px 25px 10px 10px;}
+
+.form-group .btn{
+	border:2px solid;
+	border-radius:5px;
+	background-color:#C8CFCD;
+}
+
+.form-group .link, .sub{
+	margin-left:50px;
+	float:right;
+}
+
+.form-control{
+	border:2px solid;
+	border-radius:0px;
+	height:25px;
+	margin-bottom:10px;
+}
+
+.reg{margin-left:15px;}
+
+.sub, .reg{
+	padding:1px 20px 1px 20px;
+}
+
+#photo{
+	padding-top:0px;
+	padding-bottom:0px;
+	padding-left:0px;
+}
+
+.browse{
+	margin-left:-25px;
+	padding-top:1px;
+	padding-bottom:1px;
+}
+
+#brand{
+	padding-left:10px;
+}
+
+.fa{
+	margin-right:5px;
+}

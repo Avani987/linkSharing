@@ -23,7 +23,8 @@ public class UserDao{
             author.setFirstName(fname);
             author.setLastName(lname);
             author.setAge(age);*/
-            session.save(user);
+            User dbUser=new User(user.getFname(),user.getLname(),user.getUname(),user.getEmail(),user.getPassword());
+            session.save(dbUser);
             transaction.commit();
             System.out.println("Record inserted successfully");
         } catch (HibernateException e) {
@@ -45,6 +46,7 @@ public class UserDao{
             Query query = session.createQuery("from User where uname='"+username+"' and password='"+password+"'");
             query.setMaxResults(1);
             user=(User)query.getSingleResult();
+            user.setActive(true);
             transaction.commit();
 
         } catch (Exception e) {
