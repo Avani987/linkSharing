@@ -135,7 +135,7 @@
 <div class="heading">
 <h4>Login</h4>
 </div>
-<form class="form-horizontal" action="login" method="post">
+<form class="form-horizontal" action="login" method="post" id="login">
   <div class="form-group">
     <label class="control-label col-sm-5">Username* </label>
     <div class="col-sm-7">
@@ -149,7 +149,7 @@
     </div>
   </div>
   <div class="form-group"> 
-   <div class="col-sm-6 col-xs-6"><span class="link"><a href=#><u>Forgot Password</u></a></span></div>
+   <div class="col-sm-6 col-xs-6"><span class="link"><a href="/forgot"><u>Forgot Password</u></a></span></div>
    <div class="col-sm-6 col-xs-6"><input type="submit" value="login"></div>
   </div>
 </form>
@@ -159,7 +159,7 @@
 <div class="heading">
 <h4>Register</h4>
 </div> 
-<form action="register" method="post" class="form-horizontal">
+<form action="register" method="post" id="registerform" class="form-horizontal" enctype="multipart/form-data">
   <div class="form-group">
     <label class="control-label col-sm-5">First name* </label>
     <div class="col-sm-7">
@@ -181,7 +181,7 @@
   <div class="form-group">
     <label class="control-label col-sm-5" >Username* </label>
     <div class="col-sm-7">
-      <input type="text" class="form-control" id="uname" name="uname">
+      <input type="text" class="form-control" id="uname" name="uname" <%--onkeyup="checkusername();"--%>/>
     </div>
   </div>
   <div class="form-group">
@@ -193,13 +193,13 @@
   <div class="form-group">
     <label class="control-label col-sm-5" name="confirmpwd">Confirm Password* </label>
     <div class="col-sm-7"> 
-      <input type="password" class="form-control" id="cpwd">
+      <input type="password" class="form-control" id="cpwd" name="confirmpwd" onkeyup="checkPass(); return false;"/>
     </div>
   </div>
 	<div class="form-group">
        <label class="control-label col-sm-5" name="photo">Photo</label>
        <div class="col-sm-7">
-       <input type="file" class="form-control" id="photo" name="photo"/>
+       <input type="file" class="form-control" id="photo" name="image"/>
        </div>
      </div>
   <div class="form-group"> 
@@ -215,5 +215,9 @@
 
 <script src="${pageContext.request.contextPath}/resources/static/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/static/js/login.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/static/js/register.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/static/js/password.js"></script>
 </body>
 </html>

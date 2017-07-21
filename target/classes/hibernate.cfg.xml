@@ -23,7 +23,11 @@
 
         <!--Annotated entity class-->
         <mapping class="com.project.model.User"/>
-        <!-- <mapping class="main.java.Crud"/>-->
+        <mapping class="com.project.model.Topic"/>
+       <!-- <mapping class="com.model.Subscription"/>
+        <mapping class="com.model.Resource"/>
+        <mapping class="com.model.LinkResource"/>
+        <mapping class="com.model.DocumentResource"/>-->
 
     </session-factory>
 </hibernate-configuration>

@@ -5,25 +5,49 @@ import org.springframework.orm.hibernate3.support.BlobByteArrayType;
 import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Collection;
 import java.util.Date;
+import java.util.HashSet;
 import javax.persistence.*;
 
 @Entity
 @Table(name="User")
 public class User implements Serializable {
 
-    @Id @GeneratedValue
-    private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int userId;
+    @Column(name="username",unique = true)
+    private String uname;
     private String fname;
     private String lname;
-    private String uname;
+    @Column(unique = true)
     private String email;
     private String password;
     Boolean admin;
     Boolean active;
     @Temporal(TemporalType.DATE)
     Date dateCreated;
-    //byte[] photo;
+    @Lob
+    byte[] photo;
+
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+
+   public byte[] getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(byte[] photo) {
+        this.photo = photo;
+    }
 
     public Boolean getActive() {
         return active;
@@ -35,24 +59,16 @@ public class User implements Serializable {
 
     //DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
 
-    public User(String fname, String lname, String uname, String email, String password) {
+    public User(String fname, String lname, String uname, String email, String password,byte[] photo) {
         this.fname = fname;
         this.lname = lname;
         this.uname = uname;
         this.email = email;
         this.password = password;
+        this.photo=photo;
         this.admin = false;
         this.active = false;
         this.dateCreated = /*dateFormat.format(date)*/new Date() ;
-    }
-
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getFname() {

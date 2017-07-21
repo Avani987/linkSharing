@@ -7,8 +7,8 @@ public class RegisterService {
 
     UserDao userdao= new UserDao();
 
-    public void addUser(User user){
+    public void addUser(User user,byte photo[]){
 
-        userdao.addUser(user);
+        userdao.addUser(user,photo);
     }
 }

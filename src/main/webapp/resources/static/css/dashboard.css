@@ -1,0 +1,44 @@
+
+.container-fluid{
+    border:2px solid;
+    border-radius:10px;
+    padding:3px;
+}
+
+.header h2{
+    display:inline-block;
+    font-size:25px;
+    margin-top:12px;
+    margin-left:20px;
+}
+
+.header form{
+    float:right;
+}
+.header input{
+    border:none;
+}
+.header .form-group{
+    display:inline-flex;
+    border:1px solid;
+    border-radius:50px;
+    margin-top:-15px;
+
+}
+.header span#search{
+    margin-left:10px;
+    margin-top: 4px;
+}
+.header span#cross{
+    margin-right:10px;
+    margin-top:4px;
+}
+
+.fa{
+    color:black;}
+
+.icons{
+    margin-top:5px;
+    margin-bottom:4px;}
+
+

@@ -15,6 +15,7 @@ import com.project.service.RegisterService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -27,17 +28,14 @@ public class RegistrationController {
     }*/
 
 
-    @ModelAttribute
-    public void addString(Model model){
-
-        model.addAttribute("headerMessage","LinkSharing");
-
-    }
     @RequestMapping(value="/register",method= RequestMethod.POST)
-    public ModelAndView register(@ModelAttribute User user){
+    public ModelAndView register(@ModelAttribute User user,@RequestParam CommonsMultipartFile image,HttpServletRequest request,HttpServletResponse response){
 
+        byte[] photo=null;
+        if(!image.isEmpty())
+            photo=image.getBytes();
         RegisterService register= new RegisterService();
-        register.addUser(user);
+        register.addUser(user,photo);
         ModelAndView model=new ModelAndView("afterRegister");
         return model;
     }

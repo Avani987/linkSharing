@@ -6,4 +6,7 @@
 <body>
 <h2>successfull registration</h2>
 </body>
+welcome ${userSession}
+${fname}
+${lname}
 </html>
